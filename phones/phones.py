@@ -6,7 +6,6 @@ from phones.validations import (
     format_number
 )
 
-
 INVALID_PHONE = "Invalid"
 
 
@@ -18,9 +17,9 @@ def check_number(phones: list) -> str:
             validate_lada(phone)
             is_valid_phone_number(phone)
             is_valid_length(phone)
-
         except Exception as error:
             print(f"Error: {error}")
             result_phones.append(INVALID_PHONE)
+            continue
         result_phones.append(format_number(phone))
     return result_phones
