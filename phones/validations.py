@@ -17,8 +17,11 @@ LADAS = {
     '+49': 12
 }
 
+
 def format_number(phone):
-    return phone.replace("-","").replace("(","").replace(")", "").replace(" ","").strip()
+    phone = phone.replace("-","").replace("(","").replace(")", "").replace(" ","").strip()
+    return phone
+
 
 def is_valid_length(phone: str):
     split_number = separete_number(phone)
@@ -27,13 +30,16 @@ def is_valid_length(phone: str):
     if not LADAS.get(lada) == len(number):
         raise IsNotValidLengthException("The length is not valid")
 
+
 def is_valid_lada(lada: str):
     return bool(LADAS.get(lada))
+
 
 def is_valid_phone_number(phone: str) -> bool:
     pattern = re.compile(r'^[\d\s\-\(\)]+$')
     if not bool(pattern.match(phone[1::])):
         raise IsNotValidNumberException("Is not a valid number")
+
 
 def separete_number(phone: str):
     if phone.find("-"):
@@ -48,8 +54,8 @@ def validate_lada(phone: str):
         return True
     raise InvalidLadaExeception("Invalid Lada")
 
+
 def validate_sign(phone: str):
     if not phone.startswith("+"):
         raise InvalidSignException("Sign missing")
     return True
-
