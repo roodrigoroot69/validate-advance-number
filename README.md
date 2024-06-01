@@ -44,6 +44,18 @@ Ejemplo de salida:
 
 *Nota:* Para el ejemplo del teléfono China hubo un error que se detecto al procesar y al ejemplo le falta un número.
 
+La salida correcta sería:
 
+```
+Ejemplo de salida:
+[
+"+12345678901",
+"+441234567890",
+"+919876543210",
+"Invalid",
+"Invalid",
+"+49301234567"
+]
+```
 
 
